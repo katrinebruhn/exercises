@@ -7,7 +7,7 @@ let max = 100;
 // Holder styr på hvor mange gæt computeren har brugt
 let antalGaet = 0;
 
-// Her gemmer vi computerens nuværende gæt
+// Her gemmes computerens nuværende gæt
 let computerGaet;
 
 // Finder knapperne fra HTML og gemmer dem i variabler
