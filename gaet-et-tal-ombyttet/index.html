@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <!-- Gør så danske bogstaver som æ, ø og å vises korrekt -->
+    <meta charset="UTF-8" />
+
+    <!-- Gør hjemmesiden responsiv på forskellige skærmstørrelser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Titlen der vises i browserfanen -->
+    <title>Gæt et tal</title>
+
+    <!-- Forbinder HTML-filen med CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Forbinder HTML-filen med JavaScript -->
+    <!-- defer gør at HTML'en indlæses før JavaScript køres -->
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Indeholder hele spillet -->
+    <main class="game-card">
+      <!-- Ikon øverst på spillet -->
+      <div class="game-icon">🎯</div>
+
+      <!-- Spillets overskrift -->
+      <h1>Gæt et tal</h1>
+
+      <!-- Forklarer brugeren hvad de skal gøre -->
+      <p class="intro">Tænk på et tal mellem 0 og 100</p>
+
+      <!-- Starter spillet -->
+      <button id="start">Start spil</button>
+
+      <!-- Her vises computerens nuværende gæt -->
+      <div class="guess-area">
+        <h2 id="gaet"></h2>
+      </div>
+
+      <!-- Knapper hvor brugeren fortæller computeren om dens gæt -->
+      <div class="answer-buttons">
+        <button id="forLavt">↑ For lavt</button>
+        <button id="forHoejt">↓ For højt</button>
+        <button id="rigtigt">✓ Rigtigt</button>
+      </div>
+
+      <!-- Her vises det rigtige tal og hvor mange gæt computeren brugte -->
+      <p id="resultat"></p>
+    </main>
+  </body>
+</html>
