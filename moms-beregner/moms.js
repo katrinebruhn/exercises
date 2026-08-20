@@ -1,18 +1,32 @@
 "use strict";
 
-// Laver en funktion der hedder beregnMoms.
-// Funktionen modtager et beløb og en momsprocent.
-// Hvis der ikke gives en momsprocent, bruges 25 som standard.
 function beregnMoms(beloeb, moms = 25) {
-  // Beregner beløbet med moms.
-  // Først beregnes momsen, og derefter lægges den til det oprindelige beløb.
-  const beloebMedMoms = beloeb + (beloeb * moms) / 100;
+  const momsBeloeb = (beloeb * moms) / 100;
+  const beloebMedMoms = beloeb + momsBeloeb;
 
-  // Skriver det færdige beløb med moms i konsollen.
-  console.log(beloebMedMoms);
+  return {
+    momsBeloeb,
+    beloebMedMoms,
+  };
 }
 
-// Kalder funktionen med beløbet 100.
-// Da vi ikke angiver moms, bruges standardværdien på 25 %.
-// Resultatet bliver derfor 125.
-beregnMoms(100);
+const beregnKnap = document.querySelector("#beregn");
+
+beregnKnap.addEventListener("click", function () {
+  // Henter beløbet fra hjemmesiden
+  const beloeb = Number(document.querySelector("#beloeb").value);
+
+  // Henter momsprocenten fra hjemmesiden
+  const moms = Number(document.querySelector("#moms").value);
+
+  // Beregner moms
+  const resultat = beregnMoms(beloeb, moms);
+
+  // Viser resultatet på hjemmesiden
+  document.querySelector("#resultat").textContent =
+    "Moms: " +
+    resultat.momsBeloeb +
+    " kr. | Beløb med moms: " +
+    resultat.beloebMedMoms +
+    " kr.";
+});
