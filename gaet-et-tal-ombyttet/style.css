@@ -126,19 +126,16 @@ h1 {
 /* Gul knap til "For lavt" */
 #forLavt {
   background-color: #ffd166;
-  color: #333;
 }
 
 /* Orange knap til "For højt" */
 #forHoejt {
   background-color: #ef8354;
-  color: white;
 }
 
 /* Grøn knap til "Rigtigt" */
 #rigtigt {
   background-color: #65b96e;
-  color: white;
 }
 
 /* ---------- HOVER ---------- */
