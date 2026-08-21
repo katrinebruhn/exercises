@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gæt et tal</title>
+
+    <!-- Forbinder denne HTML-side med JavaScript-filen til spillet -->
+    <script type="module" src="gaet-et-tal.js" defer></script>
+  </head>
+
+  <body>
+    <h1>Gæt et tal</h1>
+
+    <p>Gæt et tal mellem 1 og 100</p>
+
+    <!-- Her skriver brugeren sit gæt -->
+    <input type="number" class="guess" />
+
+    <!-- Brugeren trykker her for at gætte -->
+    <button class="guessButton">Gæt</button>
+
+    <!-- Her kommer resultatet -->
+    <p class="result"></p>
+
+    <!-- Viser hvor mange gange brugeren har gættet -->
+    <p>Antal forsøg: <span class="attempts">0</span></p>
+  </body>
+</html>
