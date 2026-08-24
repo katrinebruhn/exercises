@@ -21,6 +21,9 @@ function generateColumns() {
     // Fjerner det første/ældste tal fra arrayet
     // Så arrayet højst indeholder 20 tal
     valueArr.shift();
+
+    // Fjerner den første/ældste søjle fra hjemmesiden
+    list.firstElementChild.remove();
   }
 
   // Opretter et nyt <li>-element
