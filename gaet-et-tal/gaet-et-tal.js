@@ -1,6 +1,7 @@
 "use strict";
 
 import { generateRandomNumBetween0AndMax } from "../utils_lib/utils_lib.js";
+import { $ } from "../utils_lib/utils_lib.js";
 // const compGuess = generateRandomNumBetween0And100(100);
 
 // Opretter en funktion, der laver et tilfældigt tal mellem 1 og 100
