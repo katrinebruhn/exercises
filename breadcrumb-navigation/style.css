@@ -1,0 +1,15 @@
+ul {
+  /* sætter dem på én række */
+  display: flex;
+  /* fjerner prikkerne */
+  list-style: none;
+  /* fjerner standard-afstanden til venstre */
+  padding: 0;
+}
+
+/* dette betyder vælg alle <li> undtagen den sidste */
+/* ::after sætter / efter dem */
+li:not(:last-child)::after {
+  content: "/";
+  margin: 0 10px;
+}
