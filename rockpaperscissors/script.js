@@ -4,6 +4,8 @@
 let computerensValg;
 let brugerensValg;
 
+const CHOICE = { ROCK: "ROCK", PAPER: "PAPER", SCISSORS: "SCISSORS" };
+
 // Starter begge scores på 0
 let brugerScore = 0;
 let computerScore = 0;
@@ -27,6 +29,15 @@ const scissorsBtn = document.querySelector(".scissors");
 rockBtn.addEventListener("click", rockClicked);
 paperBtn.addEventListener("click", paperClicked);
 scissorsBtn.addEventListener("click", scissorsClicked);
+function rockClicked() {
+  traefferValg(CHOICE.ROCK);
+}
+function paperClicked() {
+  traefferValg(CHOICE.PAPER);
+}
+function scissorsClicked() {
+  traefferValg(CHOICE.SCISSORS);
+}
 
 // Kører når brugeren klikker på sten
 function rockClicked() {
