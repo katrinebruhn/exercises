@@ -1,18 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Nord</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Switcher</title>
+    <link rel="stylesheet" href="style.css" />
     <script type="module" src="js.js"></script>
-</head>
+  </head>
 
-<body>
-    <header class="header">UDSKIFTES</header>
-    <p>Content</p>
-    <div class="footer">UDSKIFTES</div>
+  <body>
+    <header class="header">
+      <div>
+        <h1 class="title">Café Nord</h1>
+        <p class="subtitle">Hyggelig café i hjertet af København</p>
+      </div>
 
-</body>
+      <select id="language">
+        <option value="da">Dansk</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </header>
 
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h2 class="hero-title">Velkommen til Café Nord</h2>
+
+          <p class="hero-text">
+            Vi serverer frisk kaffe, hjemmelavet kage og lækker brunch hver dag.
+          </p>
+
+          <button class="button-text">Se menu</button>
+        </div>
+
+        <img
+          src="cafe.jpeg"
+          alt="Hyggelig café med kaffe og brunch"
+          class="hero-image"
+        />
+      </section>
+
+      <section class="about">
+        <h2 class="about-title">Om os</h2>
+        <p class="about-text">
+          Café Nord er et hyggeligt sted, hvor du kan mødes med venner, arbejde
+          eller bare nyde en god kop kaffe.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">Vi glæder os til at se dig!</p>
+    </footer>
+  </body>
 </html>
