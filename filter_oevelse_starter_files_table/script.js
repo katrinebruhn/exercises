@@ -32,18 +32,56 @@ const electricVehicles = vehicles.filter((vehicle) => vehicle.isElectric);
 const moreThanTwoPassengers = vehicles.filter(
   (vehicle) => vehicle.passengers > 2,
 );
-showTheseVehicles(moreThanTwoPassengers);
+const electricVehiclesOwnedByJonas = vehicles.filter(
+  (vehicle) => vehicle.isElectric && vehicle.ownedBy === "Jonas",
+);
+
+const rugbroedVehiclesMoreThanOne = vehicles.filter(
+  (vehicle) => vehicle.fuel === "Rugbrød" && vehicle.passengers > 1,
+);
+
+// Finder filter-knapperne
+const showAllButton = document.querySelector("#showAll");
+const electricButton = document.querySelector("#electric");
+const moreThanTwoButton = document.querySelector("#moreThanTwo");
+const electricJonasButton = document.querySelector("#electricJonas");
+const rugbroedButton = document.querySelector("#rugbroed");
+
+// Når der klikkes på en knap, vises det rigtige filter
+showAllButton.addEventListener("click", () => {
+  showTheseVehicles(vehicles);
+});
+
+electricButton.addEventListener("click", () => {
+  showTheseVehicles(electricVehicles);
+});
+
+moreThanTwoButton.addEventListener("click", () => {
+  showTheseVehicles(moreThanTwoPassengers);
+});
+
+electricJonasButton.addEventListener("click", () => {
+  showTheseVehicles(electricVehiclesOwnedByJonas);
+});
+
+rugbroedButton.addEventListener("click", () => {
+  showTheseVehicles(rugbroedVehiclesMoreThanOne);
+});
+
+showTheseVehicles(vehicles);
 
 function showTheseVehicles(arr) {
+  // Tømmer tabellen før et nyt filter vises
+  tbodyPointer.innerHTML = "";
   arr.forEach((each) => {
     tbodyPointer.innerHTML += `<tr>
-  <td>${each.type}</td>
-  <td>${each.fuel}</td>
-  <td>${each.passengers}</td> 
-  <td>${each.stops}</td>
-  <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
-</tr>`;
+      <td>${each.type}</td>
+      <td>${each.fuel ? each.fuel : ""}</td>
+      <td>${each.passengers}</td> 
+      <td>${each.stops ? each.stops : ""}</td>
+      <td>${each.ownedBy ? each.ownedBy : ""}</td>
+      <td>${each.isElectric ? "Ja" : ""}</td>
+      <td>${each.isTandem ? "Ja" : ""}</td>
+    </tr>`;
   });
 }
