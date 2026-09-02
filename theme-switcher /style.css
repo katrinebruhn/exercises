@@ -1,0 +1,140 @@
+/* Styling der gælder for hele body-elementet */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  /* Bruger baggrundsfarven fra det aktive tema */
+  background-color: var(--page-bg-col);
+  /* Bruger tekstfarven fra det aktive tema */
+  color: var(--text-col);
+}
+
+/* ---------- LIGHT THEME ---------- */
+
+/* Rammer body når data-theme er sat til light */
+body[data-theme="light"] {
+  /* Gemmer headerens baggrundsfarve i en CSS custom property */
+  --header-bg-col: #f7ead7;
+  /* Gemmer main-elementets baggrundsfarve */
+  --main-bg-col: #fff4e2;
+  /* Gemmer footerens baggrundsfarve */
+  --footer-bg-col: #f7ead7;
+  /* Gemmer sidens tekstfarve */
+  --text-col: #d9ae7a;
+  /* Gemmer farven på kanten */
+  --border-col: #555;
+  /* Gemmer hele sidens baggrundsfarve */
+  --page-bg-col: #f5f5d5;
+}
+
+/* ---------- DARK THEME ---------- */
+
+/* Rammer body når data-theme er sat til dark */
+body[data-theme="dark"] {
+  /* Mørkegrøn header */
+  --header-bg-col: #003c00;
+  /* Grøn baggrund i main */
+  --main-bg-col: #006400;
+  /* Mørkegrøn footer */
+  --footer-bg-col: #004d00;
+  /* Hvid tekst */
+  --text-col: white;
+  /* Sort kant */
+  --border-col: black;
+  /* Mørk baggrund på siden */
+  --page-bg-col: #222;
+}
+
+/* ---------- HAWAII THEME ---------- */
+
+/* Rammer body når data-theme er sat til hawaii */
+body[data-theme="hawaii"] {
+  /* Gul header */
+  --header-bg-col: yellow;
+  /* Blå/turkis main */
+  --main-bg-col: cyan;
+  /* Orange/rød footer */
+  --footer-bg-col: orangered;
+  /* Sort tekst */
+  --text-col: black;
+  /* Pink kant */
+  --border-col: hotpink;
+  /* Pink baggrund */
+  --page-bg-col: hotpink;
+}
+
+/* Wrapperen holder header, main og footer samlet */
+.wrapper {
+  /* Bestemmer bredden på hjemmesiden */
+  width: 650px;
+  /* Laver en kant i venstre side med farven fra temaet */
+  border-left: 30px solid var(--border-col);
+  /* Laver en kant i højre side med farven fra temaet */
+  border-right: 30px solid var(--border-col);
+}
+
+/* Styling af headeren */
+header {
+  /* Henter headerens baggrundsfarve fra det aktive tema */
+  background-color: var(--header-bg-col);
+  /* Laver en kant omkring headeren */
+  border: 1px solid #555;
+  /* Laver luft inde i headeren */
+  padding: 15px;
+  /* Placerer overskrift og dropdown ved siden af hinanden */
+  display: flex;
+  /* Placerer overskriften til venstre og dropdown til højre */
+  justify-content: space-between;
+  /* Centrerer dem lodret */
+  align-items: center;
+}
+
+/* Styling af h1 inde i headeren */
+header h1 {
+  /* Fjerner standard margin fra overskriften */
+  margin: 0;
+
+  /* Gør overskriften større */
+  font-size: 40px;
+}
+
+/* Styling af sidens hovedindhold */
+main {
+  /* Henter baggrundsfarven fra det aktive tema */
+  background-color: var(--main-bg-col);
+
+  /* Sørger for at main har en minimumshøjde */
+  min-height: 220px;
+
+  /* Laver luft omkring indholdet */
+  padding: 30px;
+
+  /* Laver en kant i venstre side */
+  border-left: 1px solid #555;
+
+  /* Laver en kant i højre side */
+  border-right: 1px solid #555;
+}
+
+/* Styling af footeren */
+footer {
+  /* Henter footerens baggrundsfarve fra det aktive tema */
+  background-color: var(--footer-bg-col);
+
+  /* Laver luft inde i footeren */
+  padding: 10px;
+
+  /* Laver en kant rundt om footeren */
+  border: 1px solid #555;
+
+  /* Gør teksten større */
+  font-size: 26px;
+}
+
+/* Styling af dropdown-menuen */
+select {
+  /* Laver lidt luft inde i dropdown-menuen */
+  padding: 4px;
+}

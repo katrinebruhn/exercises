@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <!-- data-theme fortæller hvilket tema der er aktivt
+       Siden starter med light temaet -->
+  <body data-theme="light">
+    <!-- Wrapper samler hele hjemmesidens indhold -->
+    <div class="wrapper">
+      <header>
+        <h1>Theme Switcher</h1>
+        <!-- Dropdown hvor brugeren kan vælge et tema -->
+        <select id="theme-select">
+          <!-- Light tema -->
+          <option value="light">Light</option>
+          <!-- Dark tema -->
+          <option value="dark">Dark</option>
+          <!-- Hawaii tema -->
+          <option value="hawaii">Hawaii</option>
+        </select>
+      </header>
+
+      <!-- Sidens hovedindhold -->
+      <main>
+        <p>Content</p>
+      </main>
+
+      <!-- Sidens footer -->
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
