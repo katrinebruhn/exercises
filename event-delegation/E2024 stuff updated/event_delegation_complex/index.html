@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Event Delegation Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Complex Event Delegation with Various Inputs</h1>
+    </header>
+
+    <section id="main-content">
+        <div class="container">
+            <h2>Buttons Group A</h2>
+            <div class="button-group" id="group-a">
+                <div class="button-wrapper">
+                    <button class="btn action-btn" data-group="A" data-id="1">Button A1</button>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn action-btn" data-group="A" data-id="2">Button A2</button>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn action-btn" data-group="A" data-id="3">Button A3</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Form Group B</h2>
+            <div class="form-group" id="form-group-b">
+                <div class="form-wrapper">
+                    <label for="input-b1">Text Input B1</label>
+                    <input type="text" id="input-b1" class="form-control" data-group="B" data-id="1">
+                </div>
+                <div class="form-wrapper">
+                    <label for="checkbox-b2">Checkbox B2</label>
+                    <input type="checkbox" id="checkbox-b2" class="form-control" data-group="B" data-id="2">
+                </div>
+                <div class="form-wrapper">
+                    <label for="select-b3">Dropdown B3</label>
+                    <select id="select-b3" class="form-control" data-group="B" data-id="3">
+                        <option value="">Select an option</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Dynamic Actions</h2>
+            <div class="action-panel">
+                <div class="action-section" id="action-1">
+                    <h3>Action Panel 1</h3>
+                    <div class="inner-action">
+                        <button class="btn panel-btn" data-action="panel1" data-task="edit">Edit</button>
+                        <button class="btn panel-btn" data-action="panel1" data-task="delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="action-section" id="action-2">
+                    <h3>Action Panel 2</h3>
+                    <div class="inner-action">
+                        <button class="btn panel-btn" data-action="panel2" data-task="edit">Edit</button>
+                        <button class="btn panel-btn" data-action="panel2" data-task="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Footer Content - Event Delegation Demo</p>
+    </footer>
+
+
+</body>
+
+</html>

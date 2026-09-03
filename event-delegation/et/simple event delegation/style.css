@@ -1,0 +1,46 @@
+
+
+ body {
+        font-family: system-ui, sans-serif;
+        background: #111827;
+        color: white;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      #board {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 600px;
+      }
+
+      .tag {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 20px;
+        background: #1f2937;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .tag:hover {
+        background: #374151;
+      }
+
+      .tag.selected {
+        background: #2563eb;
+      }
+
+      .remove {
+        font-size: 14px;
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .remove:hover {
+        opacity: 1;
+      }

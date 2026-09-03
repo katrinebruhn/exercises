@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Event Delegation – Tag board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="card">
+      <header>
+        <h1>Event delegation: “Tag board”</h1>
+        <p class="hint">Klik på et tag for at markere · Klik på <strong>✕</strong> for at fjerne</p>
+      </header>
+
+      <section class="content">
+        <div class="toolbar">
+          <div class="legend"><span class="dot"></span> normal <span class="dot ok"></span> selected <span class="dot danger"></span> remove</div>
+          <div class="hint">Kun én listener på <code>#tagBoard</code></div>
+        </div>
+
+        <div class="panel grid">
+          <div>
+            <p class="hint" style="margin: 0 0 10px">Containeren nedenfor er perfekt til delegation, fordi tags kan komme/gå dynamisk.</p>
+
+            <!-- Delegation target -->
+            <div id="tagBoard" aria-label="Tag board">
+              <div class="tag" data-tag="Arrays">
+                <span class="tag__badge"></span>
+                <span class="tag__label">Arrays</span>
+                <button class="tag__remove" type="button" aria-label="Fjern Arrays" data-action="remove">✕</button>
+              </div>
+
+              <div class="tag" data-tag="DOM">
+                <span class="tag__badge"></span>
+                <span class="tag__label">DOM</span>
+                <button class="tag__remove" type="button" aria-label="Fjern DOM" data-action="remove">✕</button>
+              </div>
+
+              <div class="tag" data-tag="Events">
+                <span class="tag__badge"></span>
+                <span class="tag__label">Events</span>
+                <button class="tag__remove" type="button" aria-label="Fjern Events" data-action="remove">✕</button>
+              </div>
+
+              <div class="tag" data-tag="Async">
+                <span class="tag__badge"></span>
+                <span class="tag__label">Async</span>
+                <button class="tag__remove" type="button" aria-label="Fjern Async" data-action="remove">✕</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="hint" style="margin: 0 0 10px">Status</p>
+            <div class="panel" style="background: rgba(0, 0, 0, 0.12)">
+              <div id="status" class="hint" style="margin: 0">Markér et tag for at se status her…</div>
+            </div>
+
+            <div class="footer">
+              <span>Tip: brug <code>closest()</code> for at finde den relevante .tag</span>
+              <span>Og check <code>dataset.action</code> på klik.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const board = document.querySelector("#tagBoard");
+      const status = document.querySelector("#status");
+
+      board.addEventListener("click", (e) => {
+        console.log("e.target", e.target);
+        // 1) Hvis man klikker på remove-knappen (eller noget inde i den)
+        const removeBtn = e.target.closest('[data-action="remove"]');
+        if (removeBtn) {
+          const tagEl = removeBtn.closest(".tag");
+          const label = tagEl?.dataset.tag ?? "ukendt";
+          tagEl?.remove();
+          status.textContent = `Fjernede: ${label}`;
+          return;
+        }
+
+        // 2) Ellers: find nærmeste .tag (klik på chippen)
+        const tagEl = e.target.closest(".tag");
+        if (!tagEl || !board.contains(tagEl)) return;
+
+        tagEl.classList.toggle("is-selected");
+
+        const label = tagEl.dataset.tag;
+        const selected = tagEl.classList.contains("is-selected");
+        status.textContent = `${label} er nu ${selected ? "selected ✅" : "normal"}`;
+      });
+    </script>
+  </body>
+</html>

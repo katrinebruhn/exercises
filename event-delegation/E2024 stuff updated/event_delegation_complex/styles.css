@@ -1,0 +1,125 @@
+/* General Layout */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Main Content */
+#main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.button-group,
+.form-group {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+.button-wrapper,
+.form-wrapper {
+    padding: 10px;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Forms */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-left: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Action Panel */
+.action-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-section {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.inner-action {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.panel-btn {
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.panel-btn:hover {
+    background-color: #218838;
+}

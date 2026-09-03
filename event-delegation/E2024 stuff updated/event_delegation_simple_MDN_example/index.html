@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tile {
+        height: 100px;
+        width: 25%;
+        float: left;
+        border: 1px solid black;
+      }
+
+      #container {
+        height: 100vh;
+      }
+    </style>
+
+    <script type="module">
+      function random(number) {
+        return Math.floor(Math.random() * number);
+      }
+
+      function bgChange() {
+        const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        return rndCol;
+      }
+
+      const container = document.querySelector("#container");
+
+      container.addEventListener("click", (event) => {
+        console.log("currentTarget", event.currentTarget);
+        console.log("target", event.target);
+        console.log("**********************************");
+        event.target.style.backgroundColor = bgChange();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+      <div class="tile"></div>
+    </div>
+  </body>
+</html>

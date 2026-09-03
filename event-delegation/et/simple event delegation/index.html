@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation – Simpel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="board">
+      <div class="tag">
+        Arrays
+        <span class="remove" data-action="remove">✕</span>
+      </div>
+
+      <div class="tag">
+        DOM
+        <span class="remove" data-action="remove">✕</span>
+      </div>
+
+      <div class="tag">
+        Events
+        <span class="remove" data-action="remove">✕</span>
+      </div>
+    </div>
+
+    <script>
+      const board = document.querySelector("#board");
+
+      board.addEventListener("click", klik);
+      function klik(e) {
+        // Hvis man klikker på fjern
+        console.log("e.target", e.target);
+        if (e.target.dataset.action === "remove") {
+          e.target.closest(".tag").remove();
+        } else {
+          // Ellers toggle selected
+          const tag = e.target.closest(".tag");
+          if (tag) {
+            tag.classList.toggle("selected");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
