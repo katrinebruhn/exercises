@@ -1,0 +1,79 @@
+/* Styling af hele siden */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+
+  /* Gør ændringen af baggrundsfarven glidende */
+  transition: background-color 0.5s ease;
+}
+
+/* Styling af knappen */
+#netflix-button {
+  /* Gør det muligt at placere animationen inde i knappen */
+  position: relative;
+  /* Skjuler animationen uden for knappen */
+  overflow: hidden;
+  /* Størrelse på knappen */
+  padding: 18px 45px;
+  /* Fjerner standard kant */
+  border: none;
+  /* Gør hjørnerne lidt runde */
+  border-radius: 6px;
+  /* Grundfarven på knappen */
+  background-color: #333;
+  /* Gør teksten hvid */
+  color: white;
+  /* Størrelse på teksten */
+  font-size: 1.2rem;
+  /* Gør musen til en hånd over knappen */
+  cursor: pointer;
+}
+
+/* Laver laget der fylder knappen fra venstre mod højre */
+#netflix-button::before {
+  /* Skal være med for at pseudo-elementet vises */
+  content: "";
+  /* Placerer laget inde i knappen */
+  position: absolute;
+  /* Starter helt til venstre */
+  left: 0;
+  /* Starter fra toppen */
+  top: 0;
+  /* Fylder hele knappens højde */
+  height: 100%;
+  /* Starter med en bredde på 0 */
+  width: 0;
+  /* Farven der fylder knappen */
+  background-color: #e50914;
+  /* Starter animationen automatisk */
+  animation: fillButton 5s linear forwards;
+}
+
+/* Sørger for at teksten ligger oven på animationen */
+#netflix-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animationen der fylder knappen */
+@keyframes fillButton {
+  /* Starter med ingen fyld */
+  from {
+    width: 0;
+  }
+
+  /* Slutter med at hele knappen er fyldt */
+  to {
+    width: 100%;
+  }
+}
+
+/* Pauser animationen når brugeren interagerer med siden */
+#netflix-button.paused::before {
+  animation-play-state: paused;
+}

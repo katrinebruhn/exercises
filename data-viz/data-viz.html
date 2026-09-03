@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Viz</title>
+    <link rel="stylesheet" href="data-viz.css" />
+    <!-- defer gør at JavaScript først kører, når HTML'en er indlæst -->
+    <script src="data-viz.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Antal i kø</h1>
+      <!-- Indeholder hele speedometeret -->
+      <div class="speedometer">
+        <!-- Selve måleren -->
+        <div class="meter">
+          <!-- Nålen som JavaScript drejer -->
+          <div class="needle" id="needle"></div>
+          <!-- Den lille prik i bunden af nålen -->
+          <div class="center-dot"></div>
+        </div>
+
+        <p id="queue-number">0</p>
+        <p class="queue-text">personer i kø</p>
+      </div>
+    </main>
+  </body>
+</html>

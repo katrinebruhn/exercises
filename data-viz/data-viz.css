@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+main {
+  text-align: center;
+}
+
+/* Styling af overskriften */
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 45px;
+}
+
+/* Indeholder hele speedometeret */
+.speedometer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Selve speedometerets bue */
+.meter {
+  /* Gør det muligt at placere nålen inde i måleren */
+  position: relative;
+  /* Speedometerets bredde */
+  width: 320px;
+  /* Speedometerets højde */
+  height: 160px;
+  /* Gør toppen rund */
+  border-radius: 320px 320px 0 0;
+
+  /* Laver den grønne, gule og røde del af speedometeret */
+  background: conic-gradient(
+    from 270deg at 50% 100%,
+    #7ebc8b 0deg 60deg,
+    #e7c76a 60deg 120deg,
+    #d97878 120deg 180deg,
+    transparent 180deg
+  );
+  /* Skjuler det der går uden for speedometeret */
+  overflow: hidden;
+}
+
+/* Laver et område oven på farverne, så buen bliver tyndere */
+.meter::after {
+  /* Skal bruges for at pseudo-elementet bliver vist */
+  content: "";
+  /* Gør det muligt at placere området præcist */
+  position: absolute;
+  /* Placering fra venstre */
+  left: 14px;
+  /* Placering fra bunden */
+  bottom: 0;
+  /* Bredden på det indre område */
+  width: 292px;
+  /* Højden på det indre område */
+  height: 146px;
+  /* Samme farve som sidens baggrund */
+  background-color: #f7f7f7;
+  /* Gør det indre område rundt */
+  border-radius: 292px 292px 0 0;
+}
+
+/* Nålen i speedometeret */
+.needle {
+  /* Gør det muligt at placere nålen inde i måleren */
+  position: absolute;
+  /* Placerer nålen i midten */
+  left: 50%;
+  /* Placerer nålen i bunden */
+  bottom: 0;
+  /* Gør nålen tynd */
+  width: 3px;
+  /* Bestemmer længden på nålen */
+  height: 125px;
+  /* Gør nålen mørk */
+  background-color: #222;
+  /* Sørger for at nålen drejer fra bunden */
+  transform-origin: bottom center;
+  /* Starter nålen helt til venstre */
+  transform: translateX(-50%) rotate(-90deg);
+  /* Gør bevægelsen af nålen glidende */
+  transition: transform 0.8s ease;
+  /* Sørger for at nålen ligger foran speedometerets baggrund */
+  z-index: 2;
+}
+
+/* Den lille prik ved bunden af nålen */
+.center-dot {
+  /* Gør det muligt at placere prikken */
+  position: absolute;
+  /* Placerer prikken i midten */
+  left: 50%;
+  /* Placerer prikken ved bunden */
+  bottom: -7px;
+  /* Prikkens bredde */
+  width: 16px;
+  /* Prikkens højde */
+  height: 16px;
+  /* Gør prikken rund */
+  border-radius: 50%;
+  /* Gør prikken mørk */
+  background-color: #222;
+  /* Centrerer prikken præcist */
+  transform: translateX(-50%);
+  /* Sørger for at prikken ligger foran nålen */
+  z-index: 3;
+}
+
+/* Tallet der viser hvor mange personer der er i kø */
+#queue-number {
+  /* Laver afstand mellem speedometeret og tallet */
+  margin: 28px 0 0;
+  /* Gør tallet stort */
+  font-size: 4rem;
+  /* Gør tallet fedt */
+  font-weight: 700;
+  /* Gør vokse-animationen glidende */
+  transition: transform 0.4s ease;
+}
+
+/* Klassen bliver tilføjet med JavaScript når tallet ændrer sig */
+#queue-number.grow {
+  /* Gør tallet større */
+  transform: scale(1.25);
+}
+
+/* Teksten "personer i kø" */
+.queue-text {
+  /* Laver lidt afstand til tallet */
+  margin-top: 3px;
+  /* Gør teksten mindre */
+  font-size: 0.9rem;
+  /* Gør teksten grå */
+  color: #666;
+}

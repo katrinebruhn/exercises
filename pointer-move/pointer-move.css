@@ -1,0 +1,28 @@
+/* Opretter en CSS custom property */
+/* --lightness bestemmer hvor lys baggrundsfarven er */
+:root {
+  --lightness: 50%;
+}
+
+/* Styling af hele siden */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+
+  /* 
+  Laver baggrundsfarven med HSL.
+  120 = farvetonen, som her er grøn.
+  100% = saturation.
+  --lightness bestemmer hvor lys farven er.
+  */
+  background-color: hsl(270, 100%, var(--lightness));
+}
+
+/* Styling af overskriften */
+h1 {
+  color: white;
+}
